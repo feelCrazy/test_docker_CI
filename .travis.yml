@@ -6,7 +6,15 @@ cache:
   directories:
     - node_modules
 
-
-
   before_script:
     - yarn
+
+jobs:
+  include:
+    - stage: 'Tests' # naming the Tests stage
+      name: 'Unit Tests' # names the first Tests stage job
+      script: yarn test
+
+      - stage: build
+      name: 'build'
+      script: yarn build
