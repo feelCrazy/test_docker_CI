@@ -8,13 +8,9 @@ cache:
 
   before_script:
     - yarn
-
-jobs:
-  include:
-    - stage: 'Tests' # naming the Tests stage
-      name: 'Unit Tests' # names the first Tests stage job
-      script: yarn test
-
-      - stage: build
-      name: 'build'
-      script: yarn build
+before_install: -docker pull wming/test
+script:
+  - yarn build
+  - docker build -t wming/test .
+  - docker login -u $DOCKER_NAME -p $DOCKER_PWA
+  - docker push wming/test
