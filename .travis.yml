@@ -8,7 +8,7 @@ cache:
 
   before_script:
     - yarn
-before_install: - docker pull wming/test
+# before_install: - docker pull wming/test
 script:
   - yarn build
   - docker build -t wming/test .
