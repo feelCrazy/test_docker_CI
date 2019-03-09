@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.com/feelCrazy/test_docker_CI.svg?token=awpVCZHMqthGtCbzojKM&branch=master)](https://travis-ci.com/feelCrazy/test_docker_CI)
 
 ## Available Scripts
 
