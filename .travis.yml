@@ -2,20 +2,15 @@ language: node_js
 node_js:
   - '8'
   # Travis-CI Caching
-
 cache:
   directories:
     - node_modules
 
-before_script:
-  - yarn
-  
+  before_script:
+    - yarn
+# before_install: - docker pull wming/test
 script:
   - yarn build
-  - docker rmi -f wming/test
   - docker build -t wming/test .
-  - docker run --name docker-test -d -p 80:80 wming/test
-  # - docker login -u $DOCKER_NAME -p $DOCKER_PWA
-  # - docker push wming/test
-
-  after_script:
+  - docker login -u $DOCKER_NAME -p $DOCKER_PWA
+  - docker push wming/test
