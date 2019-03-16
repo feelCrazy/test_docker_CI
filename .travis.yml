@@ -9,9 +9,10 @@ cache:
 
 before_script:
   - yarn
-  - docker rmi -f wming/test
+  
 script:
   - yarn build
+  - docker rmi -f wming/test
   - docker build -t wming/test .
   - docker run --name docker-test -d -p 80:80 wming/test
   # - docker login -u $DOCKER_NAME -p $DOCKER_PWA
