@@ -8,7 +8,7 @@ cache:
   directories:
     - node_modules
 
-  before_script:
+before_script:
     - yarn
 before_install:
    - docker rmi -f wming/test
