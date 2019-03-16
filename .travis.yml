@@ -12,5 +12,7 @@ cache:
 script:
   - yarn build
   - docker build -t wming/test .
-  - docker login -u $DOCKER_NAME -p $DOCKER_PWA
-  - docker push wming/test
+  # - docker login -u $DOCKER_NAME -p $DOCKER_PWA
+  # - docker push wming/test
+  - docker container stop docker-test
+  - docker container start docker-test
